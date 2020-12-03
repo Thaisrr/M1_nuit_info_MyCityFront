@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { FlatEarthComponent } from './flat-earth/flat-earth.component';
 
 import { OnestpasdesmoutonsComponent } from './onestpasdesmoutons/onestpasdesmoutons.component';
 import { BillgatesComponent } from './billgates/billgates.component';
@@ -13,6 +14,7 @@ import { ComplotfacileComponent } from './complotfacile/complotfacile.component'
 @NgModule({
   declarations: [
     AppComponent,
+    FlatEarthComponent
     OnestpasdesmoutonsComponent,
     BillgatesComponent,
     AbonentendeurComponent,
