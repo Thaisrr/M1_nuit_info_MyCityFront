@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './billgates/header.component';
+
 import { OnestpasdesmoutonsComponent } from './onestpasdesmoutons/onestpasdesmoutons.component';
 import { BillgatesComponent } from './billgates/billgates.component';
 import { AbonentendeurComponent } from './abonentendeur/abonentendeur.component';
@@ -13,7 +13,6 @@ import { ComplotfacileComponent } from './complotfacile/complotfacile.component'
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     OnestpasdesmoutonsComponent,
     BillgatesComponent,
     AbonentendeurComponent,
