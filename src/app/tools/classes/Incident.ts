@@ -4,7 +4,7 @@ import {Category} from './Category';
 export class Incident {
   incident_id: number;
   auteur: User;
-  type: Category;
+  category: Category;
   titre: string;
   description: string;
   adresse: string;
