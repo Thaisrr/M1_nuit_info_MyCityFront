@@ -1,3 +1,13 @@
-.card {
-  width: 22%;
+.card-footer p {
+  color: #1f0640;
+  text-align: center;
 }
+
+h3 {
+  font-size: 1.2em;
+}
+
+.flex {
+  margin: 50px 0;
+}
+

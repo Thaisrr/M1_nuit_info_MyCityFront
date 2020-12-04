@@ -19,16 +19,20 @@ export class FlatEarthComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    const info = new Incident();
-    info.description = 'Description de mon incident, blablabla';
-    info.titre = 'Un problème quelque part';
-    info.statut = 'en attente';
-    const cat = new Category();
-    cat.nom = 'Problème';
-    info.category = cat;
+    for (let i = 0; i < 6; i ++ ) {
+      const info = new Incident();
+      info.description = 'Description de mon incident, blablabla';
+      info.titre = 'Un problème quelque part';
+      info.statut = 'en attente';
+      const cat = new Category();
+      cat.nom = 'Problème';
+      info.category = cat;
+      info.likes = 12;
 
-    this.complotsEnEtude.push(info);
-    this.complotsAEtudier.push(info);
+      this.complotsEnEtude.push(info);
+      this.complotsAEtudier.push(info);
+    }
+
   }
 
   setEnEtude(): void {

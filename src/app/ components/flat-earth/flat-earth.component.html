@@ -5,18 +5,18 @@
     <p>Ces incidents sont pris en compte, et devraient être réglés rapidement</p>
     <div class="flex">
       <mat-card class="card" *ngFor="let info of complotsEnEtude">
-        <mat-card-header>
+        <mat-card-header class="card-header" >
           <img mat-card-image [src]="info.image">
         </mat-card-header>
-        <mat-card-content>
+        <div class="card-content">
           <h4>{{info.titre}}</h4>
           <p>{{info.description}}</p>
-        </mat-card-content>
-        <mat-card-footer *ngIf="isLoggedFrancMacon(); else doing_normal">
+        </div>
+        <mat-card-footer class="card-footer" *ngIf="isLoggedFrancMacon(); else doing_normal">
           <button mat-flat-button color="warn" (click)="changeStatus(info, 'résolu')">Supprimer</button>
         </mat-card-footer>
         <ng-template #doing_normal>
-          <mat-card-footer>
+          <mat-card-footer class="card-footer">
             <p>En cours de résolution</p>
           </mat-card-footer>
         </ng-template>
@@ -27,30 +27,28 @@
   <div id="todo">
     <h3>Tout le monde ne peut pas être parfait !</h3>
     <p>Pas de panique, ces incidents seront rapidement pris en charge par nos équipes.</p>
-    <div class="card-deck">
+    <div class="card-deck flex">
       <mat-card class="card" *ngFor="let info of complotsEnEtude">
-        <mat-card-header>
+        <mat-card-header class="card-header">
           <img mat-card-image [src]="info.image">
         </mat-card-header>
-        <mat-card-content>
+        <mat-card-content class="card-content">
           <h4>{{info.titre}}</h4>
           <p>{{info.description}}</p>
         </mat-card-content>
         <!-- Si l'utilisateur est un simple mouton : -->
-        <mat-card-footer *ngIf="isLoggedFrancMacon(); else todo_normal">
+        <mat-card-footer class="card-footer" *ngIf="isLoggedFrancMacon(); else todo_normal">
           <button mat-flat-button color="primary" (click)="changeStatus(info, 'en cours')">S'occuper de l'incident</button>
           <button mat-flat-button color="warn" (click)="deleteInfo(info)">Supprimer</button>
         </mat-card-footer>
         <ng-template #todo_normal>
-          <mat-card-footer>
-            <p class="likes">{{info.likes}} approbations
-              <span *ngIf="isLoggedMouton()">
-                <button mat-flat-button color="primary" class="rounded" (click)="like(info)">
-                  <span class="material-icons">thumb_up_alt</span>
+          <mat-card-footer class="card-footer">
+            <p class="likes">{{info.likes}} approbations</p>
+              <p *ngIf="isLoggedMouton()">
+                <button mat-flat-button color="primary" class="circle" (click)="like(info)">
+                  <span class="material-icons">thumb_up_alt</span>  Approuver
                 </button>
-                Approuver
-              </span>
-            </p>
+              </p>
           </mat-card-footer>
         </ng-template>
       </mat-card>
