@@ -11,4 +11,6 @@ export class Incident {
   ouverture: Date;
   fermeture: Date;
   statut: string;
+  image: string; // Uniquement pour le front
+  likes: number;
 }
