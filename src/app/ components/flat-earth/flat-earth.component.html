@@ -1,1 +1,60 @@
-<p>flat-earth works!</p>
+<div>
+
+  <div id="doing">
+    <h3>Nos équipes sont là pour vous !</h3>
+    <p>Ces incidents sont pris en compte, et devraient être réglés rapidement</p>
+    <div class="card-deck">
+      <mat-card class="card" *ngFor="let info of complotsEnEtude">
+        <mat-card-header>
+          <img mat-card-image [src]="info.image">
+        </mat-card-header>
+        <mat-card-content>
+          <h4>{{info.titre}}</h4>
+          <p>{{info.description}}</p>
+        </mat-card-content>
+        <mat-card-footer *ngIf="isLoggedFrancMacon(); else doing_normal">
+          <button mat-flat-button color="warn" (click)="changeStatus(info, 'résolu')">Supprimer</button>
+        </mat-card-footer>
+        <ng-template #doing_normal>
+          <mat-card-footer>
+            <p>En cours de résolution</p>
+          </mat-card-footer>
+        </ng-template>
+      </mat-card>
+    </div>
+  </div>
+
+  <div id="todo">
+    <h3>Tout le monde ne peut pas être parfait !</h3>
+    <p>Pas de panique, ces incidents seront rapidement pris en charge par nos équipes.</p>
+    <div class="card-deck">
+      <mat-card class="card" *ngFor="let info of complotsEnEtude">
+        <mat-card-header>
+          <img mat-card-image [src]="info.image">
+        </mat-card-header>
+        <mat-card-content>
+          <h4>{{info.titre}}</h4>
+          <p>{{info.description}}</p>
+        </mat-card-content>
+        <!-- Si l'utilisateur est un simple mouton : -->
+        <mat-card-footer *ngIf="isLoggedFrancMacon(); else todo_normal">
+          <button mat-flat-button color="primary" (click)="changeStatus(info, 'en cours')">S'occuper de l'incident</button>
+          <button mat-flat-button color="warn" (click)="deleteInfo(info)">Supprimer</button>
+        </mat-card-footer>
+        <ng-template #todo_normal>
+          <mat-card-footer>
+            <p class="likes">{{info.likes}} approbations
+              <span *ngIf="isLoggedMouton()">
+                <button mat-flat-button class="rounded" (click)="like(info)">
+                  <span class="material-icons">thumb_up_alt</span>
+                </button>
+                Approuver
+              </span>
+            </p>
+          </mat-card-footer>
+        </ng-template>
+      </mat-card>
+    </div>
+  </div>
+
+</div>

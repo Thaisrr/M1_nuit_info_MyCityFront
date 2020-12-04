@@ -10,11 +10,14 @@ import { AbonentendeurComponent } from './abonentendeur/abonentendeur.component'
 import { ReptilianprofileComponent } from './reptilianprofile/reptilianprofile.component';
 import { NoussachonsComponent } from './noussachons/noussachons.component';
 import { ComplotfacileComponent } from './complotfacile/complotfacile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FlatEarthComponent
+    FlatEarthComponent,
     OnestpasdesmoutonsComponent,
     BillgatesComponent,
     AbonentendeurComponent,
@@ -23,7 +26,10 @@ import { ComplotfacileComponent } from './complotfacile/complotfacile.component'
     ComplotfacileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
