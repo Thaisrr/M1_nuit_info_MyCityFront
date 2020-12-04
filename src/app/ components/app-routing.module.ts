@@ -5,6 +5,7 @@ import {NoussachonsComponent} from './noussachons/noussachons.component';
 import {BillgatesComponent} from './billgates/billgates.component';
 import {ComplotfacileComponent} from './complotfacile/complotfacile.component';
 import {OnestpasdesmoutonsComponent} from './onestpasdesmoutons/onestpasdesmoutons.component';
+import {FlatEarthComponent} from './flat-earth/flat-earth.component';
 
 const routes: Routes = [
   {path: 'profil', component: ReptilianprofileComponent},
@@ -12,7 +13,9 @@ const routes: Routes = [
   {path: 'faq', component: NoussachonsComponent},
   {path: 'header', component: BillgatesComponent},
   {path: 'tuto', component: ComplotfacileComponent},
-  {path: 'signalerincident', component: OnestpasdesmoutonsComponent}
+  {path: 'signalerincident', component: OnestpasdesmoutonsComponent},
+  {path: '', component: FlatEarthComponent},
+
 ];
 
 @NgModule({

@@ -14,7 +14,7 @@ import {Category} from '../classes/Category';
 export class NoussachonsService {
   url = API_URL + '/incident';
 
-  constructor(private http: HttpClient, private storage: Storage) { }
+  constructor(private http: HttpClient) { }
 
   post( info: Incident ): Observable<any> {
     return this.http.post(this.url, info, httpOptions );

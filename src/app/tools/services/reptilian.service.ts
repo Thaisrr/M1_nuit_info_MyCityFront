@@ -16,7 +16,7 @@ export class ReptilianService {
 
     constructor(
       private http: HttpClient,
-      private storage: Storage
+   //   private storage: Storage
     ) { }
 
   post(user: User ): Observable<any> {
@@ -35,15 +35,15 @@ export class ReptilianService {
       }
     });
   }
-
+/*
   getCurrent(): Promise<User> {
     return this.storage.get('currentUser');
   }
-
+*/
   update(user: User): Observable<any> {
     return this.http.put(this.url, user, httpOptions)
       .pipe(
-        tap(_ => this.storage.set('currentUser', user))
+       // tap(_ => this.storage.set('currentUser', user))
       );
   }
 }
