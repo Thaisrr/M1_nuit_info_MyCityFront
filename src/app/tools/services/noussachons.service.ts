@@ -12,7 +12,7 @@ import {Category} from '../classes/Category';
   providedIn: 'root'
 })
 export class NoussachonsService {
-  url = API_URL + '/incident';
+  url = API_URL + '/incidents';
 
   constructor(private http: HttpClient) { }
 
@@ -26,20 +26,17 @@ export class NoussachonsService {
   }
 
   get(id: number): Observable<Incident> {
-    return this.http.get<Incident>(this.url, {
-      params: {
-        id: id.toString()
-      }
-    });
+    return this.http.get<Incident>(this.url + '/' + id
+    );
   }
 
   getByCategory(cat: Category | number): Observable<Incident[]> {
     const id = typeof cat === 'number' ? cat : cat.category_id;
-    return this.http.get<Incident[]>(this.url + '/id');
+    return this.http.get<Incident[]>(this.url + '/categorie/' + id);
   }
 
   getByStatus(status: string): Observable<Incident[]> {
-    return this.http.get<Incident[]>(this.url + '/' + status);
+    return this.http.get<Incident[]>(this.url + '/statut/' + status);
   }
 
   update(info: Incident): Observable<any> {

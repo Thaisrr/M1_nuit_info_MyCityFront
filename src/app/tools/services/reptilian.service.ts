@@ -12,7 +12,7 @@ import {httpOptions} from '../constantes/httpOptions';
 })
 export class ReptilianService {
 
-  url = API_URL + '/user';
+  url = API_URL + '/utilisateur';
 
     constructor(
       private http: HttpClient,
@@ -20,10 +20,10 @@ export class ReptilianService {
     ) { }
 
   post(user: User ): Observable<any> {
-    return this.http.post(this.url, user, );
+    return this.http.post(this.url, user );
   }
 
-  login(email: string, password: string) {
+  login(email: string, password: string): Observable<any> {
 
     return this.http.post<any>(`${this.url}/login`, {
       email: email,
@@ -43,17 +43,18 @@ export class ReptilianService {
   }
 
   get(id: number): Observable<User> {
-    return this.http.get<User>(this.url, {
-      params: {
-        id: id.toString()
-      }
-    });
+    return this.http.get<User>(this.url + '/' + id);
   }
-/*
-  getCurrent(): Promise<User> {
-    return this.storage.get('currentUser');
+  getByName(name: string): Observable<User> {
+    return this.http.get<User>(this.url + '/nom/' + name);
   }
-*/
+  getByPrenom(name: string): Observable<User> {
+    return this.http.get<User>(this.url + '/prenom' + name);
+  }
+  getByEmail(mail: string): Observable<User> {
+    return this.http.get<User>(this.url + '/email' + mail);
+  }
+
   update(user: User): Observable<any> {
     return this.http.put(this.url, user, httpOptions)
       .pipe(
