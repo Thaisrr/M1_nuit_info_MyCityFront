@@ -1,9 +1,9 @@
-<div>
+<div class="main">
 
   <div id="doing">
     <h3>Nos équipes sont là pour vous !</h3>
     <p>Ces incidents sont pris en compte, et devraient être réglés rapidement</p>
-    <div class="card-deck">
+    <div class="flex">
       <mat-card class="card" *ngFor="let info of complotsEnEtude">
         <mat-card-header>
           <img mat-card-image [src]="info.image">
@@ -45,7 +45,7 @@
           <mat-card-footer>
             <p class="likes">{{info.likes}} approbations
               <span *ngIf="isLoggedMouton()">
-                <button mat-flat-button class="rounded" (click)="like(info)">
+                <button mat-flat-button color="primary" class="rounded" (click)="like(info)">
                   <span class="material-icons">thumb_up_alt</span>
                 </button>
                 Approuver
