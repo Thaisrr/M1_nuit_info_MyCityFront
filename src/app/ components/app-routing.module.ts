@@ -6,6 +6,8 @@ import {BillgatesComponent} from './billgates/billgates.component';
 import {ComplotfacileComponent} from './complotfacile/complotfacile.component';
 import {OnestpasdesmoutonsComponent} from './onestpasdesmoutons/onestpasdesmoutons.component';
 import {FlatEarthComponent} from './flat-earth/flat-earth.component';
+import {ReptigisterComponent} from './reptigister/reptigister.component';
+import {LogilienComponent} from './logilien/logilien.component';
 
 const routes: Routes = [
   {path: 'profil', component: ReptilianprofileComponent},
@@ -14,8 +16,9 @@ const routes: Routes = [
   {path: 'header', component: BillgatesComponent},
   {path: 'tuto', component: ComplotfacileComponent},
   {path: 'signalerincident', component: OnestpasdesmoutonsComponent},
+  {path: 'inscription', component: ReptigisterComponent },
+  {path: 'connexion', component: LogilienComponent },
   {path: '', component: FlatEarthComponent},
-
 ];
 
 @NgModule({

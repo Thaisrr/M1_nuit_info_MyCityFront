@@ -22,6 +22,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { LogilienComponent } from './logilien/logilien.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ReptilianprofileComponent,
     NoussachonsComponent,
     ComplotfacileComponent,
-    ReptigisterComponent
+    ReptigisterComponent,
+    LogilienComponent
   ],
   imports: [
     BrowserModule,

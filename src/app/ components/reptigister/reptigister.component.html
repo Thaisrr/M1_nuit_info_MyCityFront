@@ -16,10 +16,10 @@
                required type="text"/>
         <mat-icon matSuffix>face</mat-icon>
         <mat-error *ngIf="accountForm.get('firstName').invalid &&
-                        (accountForm.get('firstName').dirty || accountForm.get('firstName').touched)
-                        accountForm.get('firstName').hasError('required')
-                        accountForm.get('firstName').hasError('maxlength')
-                        accountForm.get('firstName').hasError('minlength')"
+                        (accountForm.get('firstName').dirty || accountForm.get('firstName').touched) &&
+                       ( accountForm.get('firstName').hasError('required') ||
+                        accountForm.get('firstName').hasError('maxlength') ||
+                        accountForm.get('firstName').hasError('minlength'))"
                         >Veuillez entrer un prénom valide
         </mat-error>
       </mat-form-field>
@@ -99,9 +99,8 @@
         </mat-error>
       </mat-form-field>
       <div class="button-container">
-        <button  class="button" type="submit">Valider</button>
+        <button mat-flat-button color="primary" class="button" type="submit">Valider</button>
       </div>
-
 
     </form>
 
