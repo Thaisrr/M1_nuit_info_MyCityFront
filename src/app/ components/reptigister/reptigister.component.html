@@ -1,0 +1,110 @@
+<div class="main mat-elevation-z3 flex">
+  <div class="image">
+    <p>Ici, une superbe image</p>
+  </div>
+  <div class="form">
+    <form class="flex-form" (ngSubmit)="onSubmit()" [formGroup]="accountForm" novalidate>
+
+      <mat-form-field matFormField appearance="legacy" class="inline-field">
+        <mat-label>Prénom</mat-label>
+        <input formControlName="firstName"
+               matInput
+               maxlength="25"
+               minlength="3"
+               name="firstName"
+               placeholder="Votre prénom"
+               required type="text"/>
+        <mat-icon matSuffix>face</mat-icon>
+        <mat-error *ngIf="accountForm.get('firstName').invalid &&
+                        (accountForm.get('firstName').dirty || accountForm.get('firstName').touched)
+                        accountForm.get('firstName').hasError('required')
+                        accountForm.get('firstName').hasError('maxlength')
+                        accountForm.get('firstName').hasError('minlength')"
+                        >Veuillez entrer un prénom valide
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="inline-field">
+        <mat-label>Nom</mat-label>
+        <input formControlName="lastName" matInput
+               required
+               maxlength="30"
+               minlength="3"
+               name="lastName"
+               pattern="[a-zA-ZàâæçéèêëîïôœùûüÿÀÂÆÇnÉÈÊËÎÏÔŒÙÛÜŸ_'-]+"
+               placeholder="Votre nom"
+               type="text"/>
+        <mat-icon matSuffix>face</mat-icon>
+        <mat-error *ngIf="accountForm.get('lastName').invalid &&
+                        (accountForm.get('lastName').dirty || accountForm.get('lastName').touched) &&
+                        ( accountForm.get('lastName').hasError('minlength') ||
+                        accountForm.get('lastName').hasError('required') ||
+                        accountForm.get('lastName').hasError('maxlength'))">
+                    Veuillez entrer votre nom.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="inline-field">
+        <mat-label>Email</mat-label>
+        <input autocomplete="doNotAutoComplete"
+               formControlName="email"
+               placeholder="Adresse email"
+               matInput
+               maxlength="150"
+               name="email"
+               required
+               type="email"/>
+        <mat-icon matSuffix>drafts</mat-icon>
+        <mat-error *ngIf="accountForm.get('email').invalid &&
+                        (accountForm.get('email').dirty || accountForm.get('email').touched) &&
+                        (accountForm.get('email').hasError('required') ||
+                        accountForm.get('email').hasError('email'))">
+          Entrez une adresse email valide
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="legacy" class="inline-field">
+        <mat-label>Mot de passe</mat-label>
+        <input formControlName="password"
+               matInput
+               minlength="8"
+               name="password"
+               placeholder="Mot de passe"
+               type="password"/>
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-hint>Votre mot de passe doit comprendre 8 caractères, dont une lettre, un nombre, et un caractère spécial</mat-hint>
+        <mat-error *ngIf="accountForm.get('password').invalid &&
+                      (accountForm.get('password').dirty || accountForm.get('password').touched)
+                       && (accountForm.get('password').hasError('required') || accountForm.get('password').hasError('pattern'))">
+          Votre mot de passe n'est pas valide
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="legacy" class="inline-field">
+        <mat-label>Validation du mot de passe</mat-label>
+        <input formControlName="password_validation"
+               matInput
+               minlength="8"
+               name="city"
+               pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+               placeholder="Mot de passe"
+               type="password"/>
+        <mat-icon matSuffix>lock</mat-icon>
+        <mat-error *ngIf="accountForm.get('password_validation').invalid &&
+                      (accountForm.get('password_validation').dirty || accountForm.get('password_validation').touched)
+                       && (accountForm.get('password_validation').hasError('required') || accountForm.get('password_validation').hasError('pattern'))">
+          La valeur de ce champs doit correspondre au mot de passe entré
+        </mat-error>
+      </mat-form-field>
+      <div class="button-container">
+        <button  class="button" type="submit">Valider</button>
+      </div>
+
+
+    </form>
+
+
+  </div>
+</div>
