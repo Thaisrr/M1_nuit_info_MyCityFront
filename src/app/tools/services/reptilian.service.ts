@@ -12,7 +12,7 @@ import {httpOptions} from '../constantes/httpOptions';
 })
 export class ReptilianService {
 
-  url = API_URL + '/utilisateur';
+  url = API_URL + '/utilisateurs';
 
     constructor(
       private http: HttpClient,
