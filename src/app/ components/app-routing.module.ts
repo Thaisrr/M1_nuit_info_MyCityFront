@@ -10,6 +10,7 @@ import {ReptigisterComponent} from './reptigister/reptigister.component';
 import {LogilienComponent} from './logilien/logilien.component';
 
 const routes: Routes = [
+  {path: 'accueil', component: FlatEarthComponent},
   {path: 'profil', component: ReptilianprofileComponent},
   {path: 'mesincidents', component: NoussachonsComponent},
   {path: 'faq', component: NoussachonsComponent},
