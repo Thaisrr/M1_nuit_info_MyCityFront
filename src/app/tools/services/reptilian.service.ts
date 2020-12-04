@@ -57,8 +57,6 @@ export class ReptilianService {
 
   update(user: User): Observable<any> {
     return this.http.put(this.url, user, httpOptions)
-      .pipe(
-       // tap(_ => this.storage.set('currentUser', user))
-      );
+      .pipe();
   }
 }
